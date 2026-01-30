@@ -99,9 +99,6 @@ manage.py
 
 requirements.txt 
 
-📚 API Documentation
-You can add automated API docs (Swagger / OpenAPI) in future to support frontend developers and testers.
-
 🤝 Contributing
 Feel free to:
 
