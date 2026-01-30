@@ -118,5 +118,59 @@ SECRET_KEY and other secrets must never be in version control.
 
 For deployment, ensure DEBUG=False.
 
+## 🔗 API Endpoints
+
+Below are the main API endpoints provided by this backend.
+
+### 🔐 Authentication
+
+| Method | Endpoint | Description |
+|------|---------|------------|
+| POST | `/api/auth/register/` | Register a new user |
+| POST | `/api/auth/login/` | Login user and return tokens |
+
+---
+
+### 👤 User
+
+| Method | Endpoint | Description |
+|------|---------|------------|
+| GET | `/api/profile/` | Get logged-in user profile |
+
+> Authentication required for protected routes.
+
+---
+
+### 🗺 Places
+
+| Method | Endpoint | Description |
+|------|---------|------------|
+| GET | `/api/places/` | Get list of offbeat places |
+| GET | `/api/places/<id>/` | Get details of a place |
+
+---
+
+### ⭐ Reviews
+
+| Method | Endpoint | Description |
+|------|---------|------------|
+| POST | `/api/reviews/` | Add a review |
+| GET | `/api/reviews/<place_id>/` | Get reviews for a place |
+
+### Example Request
+
+**GET /api/places/**
+
+Response:
+```json
+[
+  {
+    "id": 1,
+    "name": "Dzukou Valley",
+    "location": "Nagaland",
+    "description": "A peaceful offbeat destination"
+  }
+]
+
 📜 License
 This repository is open-source and available under the terms in the repository. Feel free to reuse and build on it!
