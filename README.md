@@ -156,7 +156,7 @@ Below are the main API endpoints provided by this backend.
 
 ### Example Request
 
-**GET /api/places/**
+** GET /api/places/ **
 
 Response:
 ```json
