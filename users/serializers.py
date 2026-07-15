@@ -1,6 +1,5 @@
 from rest_framework import serializers
-from .models import Customer
-
+from .models import Customer, Provider
 class RegisterSerializer(serializers.ModelSerializer):
     #we declared the password2,beccause User mdoel doesnot contain default.
     password2=serializers.CharField(write_only=True)
@@ -34,4 +33,17 @@ class ProfileSerializer(serializers.ModelSerializer):
             'bio',
             'avatar',
             'created_at'
+        ]
+
+class ProviderSerializer(serializers.ModelSerializer):
+    class Meta:
+        model=Provider
+        fields=[
+            'id',
+            'display_name',
+            'about',
+            'services_offered',
+            'verified',
+            'contact_phone',
+            'payout_info',
         ]

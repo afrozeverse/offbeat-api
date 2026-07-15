@@ -13,5 +13,6 @@ urlpatterns = [
     path('delete/<uuid:id>/',views.manage_account),
     path('become-provider/', views.BecomeProviderView.as_view()),
     path('providers/', views.list_providers, name='list_providers'),
+    path('get-provider/<uuid:pk>/', views.get__provider, name='get_provider'),
     
 ]

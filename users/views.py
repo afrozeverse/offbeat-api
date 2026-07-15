@@ -4,7 +4,7 @@ from rest_framework.response import Response
 from rest_framework import authentication, permissions
 from rest_framework.response import Response
 from rest_framework import authentication, permissions
-from .serializers import RegisterSerializer, ProfileSerializer
+from .serializers import RegisterSerializer, ProfileSerializer,ProviderSerializer
 from .models import Customer
 from rest_framework import status
 from rest_framework_simplejwt.tokens import RefreshToken
@@ -190,3 +190,12 @@ def list_providers(request):
             }
         })
     return Response(data)
+
+@api_view(['GET'])
+def get__provider(request,pk):
+    try:
+        provider=Provider.objects.get(pk=pk)
+    except Provider.DoesNotExist:
+        return Response(status=status.HTTP_404_NOT_FOUND)
+    serializer=ProviderSerializer(provider)
+    return Response(serializer.data,status=status.HTTP_200_OK)
